@@ -1,40 +1,30 @@
 # Brinicle Linux
 
-<<<<<<< HEAD
-Minimal Debian-based Linux distribution for servers and development environments.
-=======
-Minimal Debian(12)-based Linux distribution for servers and development environments.
->>>>>>> 33a0d97 (few changes)
+Minimal Debian-based Linux distribution for servers, containers, and development environments.
 
 ## Features
 
-- Debian 12 (Bookworm) base
-<<<<<<< HEAD
-=======
+- Based on Debian 12 (Bookworm)
 - Command-line only, no GUI
->>>>>>> 33a0d97 (few changes)
+- Lightweight (~450 MB ISO)
 - Pre-installed: openssh-server, curl, wget, git, vim, nano, htop, neofetch
-- Small ISO size (~450 MB)
+- Multi-architecture support
+
+## Architectures
+
+| Architecture | File | Use Case |
+|--------------|------|----------|
+| amd64 | brinicle-amd64.iso | Most PCs and servers |
+| arm64 | brinicle-arm64.iso | Raspberry Pi 4/5, ARM servers |
+| armhf | brinicle-armhf.iso | Raspberry Pi 2/3, older ARM devices |
+| i386 | brinicle-i386.iso | Legacy 32-bit systems |
 
 ## Download
 
-Check [Releases](https://github.com/holcc1145-byte/brinicle-linux/releases)
+Get ISO files from [Releases](https://github.com/holcc1145-byte/brinicle-linux/releases)
 
-<<<<<<< HEAD
-=======
-## Login
+## Quick Start
 
-| Account | Password |
-|---------|----------|
-| brinicle | brinicle |
-| root | root |
-
->>>>>>> 33a0d97 (few changes)
-## Build
-
+### Write to USB (Linux/macOS)
 ```bash
-git clone https://github.com/holcc1145-byte/brinicle-linux.git
-cd brinicle-linux
-sudo apt install live-build
-sudo lb config --distribution bookworm
-sudo lb build
+dd if=brinicle-amd64.iso of=/dev/sdX bs=4M status=progress
